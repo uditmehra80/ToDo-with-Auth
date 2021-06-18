@@ -44,7 +44,7 @@ export default function Login() {
     const history = useHistory();
   
     return (
-      <div className="container">
+      <div className="">
         <h1 className="head">Login</h1>
         {error && <span style={{ color: "red" }}>{error}</span>}
         <form onSubmit={login}>

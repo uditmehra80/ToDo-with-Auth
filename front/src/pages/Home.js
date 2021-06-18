@@ -10,10 +10,11 @@ export default function Home(){
         setCredentials(null);
     }
     return(
-        <div className="App">
+        <div>
+        {!credentials && <h3>Create an account or LogIn</h3>}<br/><br/><br/>
+        {!credentials && <Link className="btn btn-primary btn-block" to="/register">Register</Link>}
+        {!credentials && <Link className="btn btn-success btn-block" to="/login">LogIn</Link>}
         {credentials && <h1>Welcome... {credentials.username}</h1>}
-        {!credentials && <Link className="btn btn-primary" to="/register">Register</Link>}
-        {!credentials && <Link className="btn btn-success" to="/login">LogIn</Link>}
         <br/>
         {credentials && <Todos/>}
         <br/>

@@ -114,6 +114,15 @@ app.get("/todos", async (req, res) => {
   const { todos } = await Todos.findOne({ userId: user._id }).exec();
   res.json(todos);
 });
+//for gettng one value
+app.get("/todos/:userid/:itemid", async (req, res) => {
+  const { todos } =await Todos.findOne({userId: req.params.userid },
+    { todos : { $elemMatch : { _id : req.params.itemid } } }
+  ).exec();
+  res.json(todos);
+
+});
+
 
 
 //----------------------

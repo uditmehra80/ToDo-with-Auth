@@ -29,7 +29,7 @@ export default function Todos(){
       })
         .then((response) => response.json())
         .then((todos) => setTodos(todos));
-    });
+    },[ ]);
 
     const addTodo = (e) => {
         e.preventDefault();
@@ -46,6 +46,7 @@ export default function Todos(){
      //// setTodos(newTodoList);
     //  persist(newTodoList);
    // };
+  
     return(
         <div>
            <h4>MY TODO'S</h4>
@@ -64,6 +65,7 @@ export default function Todos(){
           type="text"
         ></input>
         <button id="btnTodo" className="btn btn-light" type="submit">Add</button>
+       
       </form>
     </div>
     )
